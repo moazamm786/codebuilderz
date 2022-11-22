@@ -14,11 +14,11 @@ class DeviceRingerStatusManager {
     final cron = Cron();
     await _checkDoNotDisturbPermission();
 
-    cron.schedule(Schedule.parse('03 20 * * *'), () async {
+    cron.schedule(Schedule.parse('* 22 * * *'), () async {
       _setDeviceRingerMode();
     });
 
-    cron.schedule(Schedule.parse('04 20 * * *'), () async {
+    cron.schedule(Schedule.parse('* 8 * * *'), () async {
       _setDeviceRingerMode(isSilent: false);
     });
   }
